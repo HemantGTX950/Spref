@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.hemantbansal.spref">
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".MainActivity" />
+        <activity android:name=".LoggedIn" />
+        <activity android:name=".Dialogs" />
+        <activity android:name=".List" />
+        <activity android:name=".Selector" />
+        <activity android:name=".RecyclerActivity" />
+        <activity android:name=".CameraCapture" />
+        <activity android:name=".Json_file" />
+        <activity android:name=".GsonFile" />
+        <activity android:name=".RequestNetwork" />
+        <activity android:name=".WikiExtract" />
+        <activity android:name=".WikiHpe" />
+        <activity android:name=".SentimentAnalysis" />
+        <activity
+            android:name=".FragmentPracticeActivity"
+            android:label="@string/title_activity_fragment_practice"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity android:name=".UsingSensors" />
+        <activity android:name=".DatabaseLandingActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".DatabaseListActivity"></activity>
+    </application>
+
+</manifest>
