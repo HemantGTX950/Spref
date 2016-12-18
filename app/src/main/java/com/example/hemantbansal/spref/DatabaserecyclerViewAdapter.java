@@ -12,15 +12,17 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
+import Database.DbHelper;
+
 /**
  * Created by Hemant Bansal on 11/24/2016.
  */
 
 public class DatabaserecyclerViewAdapter extends RecyclerView.Adapter<DatabaserecyclerViewAdapter.DatabaserecyclerViewHolder> {
     private Context context;
-    private ArrayList<String> arrayList;
+    private ArrayList<DbHelper.User> arrayList;
 
-    public DatabaserecyclerViewAdapter(ArrayList<String> arrayList, Context context) {
+    public DatabaserecyclerViewAdapter(ArrayList<DbHelper.User> arrayList, Context context) {
         this.arrayList = arrayList;
         this.context = context;
     }
@@ -39,9 +41,13 @@ public class DatabaserecyclerViewAdapter extends RecyclerView.Adapter<Databasere
 
     @Override
     public void onBindViewHolder(DatabaserecyclerViewAdapter.DatabaserecyclerViewHolder holder, int position) {
-        int n=arrayList.get(position).indexOf("\n");
+        /*int n=arrayList.get(position).indexOf("\n");
         holder.name.setText((arrayList.get(position).substring(0,n)));
-        holder.number.setText((arrayList.get(position).substring(n+1)));
+        holder.number.setText((arrayList.get(position).substring(n+1)));*/
+        holder.name.setText(arrayList.get(position).getName().toString());
+        holder.number.setText(arrayList.get(position).getPhone().toString());
+
+
     }
 
     @Override

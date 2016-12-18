@@ -18,7 +18,7 @@ public class DatabaseListActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_database_list);
         recyclerView=(RecyclerView)findViewById(R.id.database_recycler_view_);
-
+/*
         ArrayList<String> arrayList=new ArrayList<String>();
         dbHelper=new DbHelper(DatabaseListActivity.this);
         arrayList=dbHelper.retrieveInfoFromDb();
@@ -26,7 +26,15 @@ public class DatabaseListActivity extends AppCompatActivity {
         layoutManager.setOrientation(LinearLayoutManager.VERTICAL);
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setAdapter(new DatabaserecyclerViewAdapter(arrayList,DatabaseListActivity.this));
+        */
 
+        ArrayList<DbHelper.User> arrayList=new ArrayList<DbHelper.User>();
+        dbHelper=new DbHelper(DatabaseListActivity.this);
+        arrayList=dbHelper.retrieveListFromDb();
+        LinearLayoutManager layoutManager=new LinearLayoutManager(DatabaseListActivity.this);
+        layoutManager.setOrientation(LinearLayoutManager.VERTICAL);
+        recyclerView.setLayoutManager(layoutManager);
+        recyclerView.setAdapter(new DatabaserecyclerViewAdapter(arrayList,DatabaseListActivity.this));
 
 
     }

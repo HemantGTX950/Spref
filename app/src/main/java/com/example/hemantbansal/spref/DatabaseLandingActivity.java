@@ -28,13 +28,13 @@ public class DatabaseLandingActivity extends AppCompatActivity {
         lgbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ArrayList<String> arrayList=new ArrayList<String>();
+                ArrayList<DbHelper.User> arrayList=new ArrayList<DbHelper.User>();
 
-                arrayList=dbHelper.retrieveInfoFromDb();
+                arrayList=dbHelper.retrieveListFromDb();
 
                 int n=arrayList.size();
                 for (int i=0;i<n;i++) {
-                    Log.d("data:", arrayList.get(i));
+                    Log.d("data:", arrayList.get(i).getName()+":"+arrayList.get(i).getPhone());
 
                 }
                 Intent i=new Intent(DatabaseLandingActivity.this,DatabaseListActivity.class);

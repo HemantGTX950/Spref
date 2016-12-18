@@ -48,29 +48,6 @@ public class DbHelper extends SQLiteOpenHelper {
         db.insert(Schema.DbEntry.TABLE_NAME,null,values);
     }
 
-    public ArrayList<String> retrieveInfoFromDb(){
-
-        SQLiteDatabase db=getReadableDatabase();
-        String[] projection={Schema.DbEntry.COLUMN_STUDENT_NAME,Schema.DbEntry.COLUMN_STUDENT_CONTACT};
-
-        Cursor readCursor=db.query(Schema.DbEntry.TABLE_NAME,projection,null,null,null,null,null);
-        readCursor.moveToFirst();
-        int totalRows=readCursor.getCount();
-
-        ArrayList<String> results=new ArrayList<>();
-        while(totalRows>0){
-            totalRows--;
-            String studentName=readCursor.getString(readCursor.getColumnIndexOrThrow(Schema.DbEntry.COLUMN_STUDENT_NAME));
-            String studentNumber=readCursor.getString(readCursor.getColumnIndexOrThrow(Schema.DbEntry.COLUMN_STUDENT_CONTACT));
-            String converted=studentName+"\n"+studentNumber;
-            results.add(converted);
-
-            readCursor.moveToNext();
-        }
-        readCursor.close();
-        return results;
-    }
-
 
 
     public ArrayList<User> retrieveListFromDb(){
@@ -99,8 +76,10 @@ public class DbHelper extends SQLiteOpenHelper {
     public class User{
         private String phone,name;
 
+
         public User(String name, String phone) {
             this.name = name;
+
             this.phone = phone;
         }
 
