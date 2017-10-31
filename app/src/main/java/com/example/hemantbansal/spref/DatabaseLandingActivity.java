@@ -29,7 +29,7 @@ public class DatabaseLandingActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 ArrayList<DbHelper.User> arrayList=new ArrayList<DbHelper.User>();
-
+                //getting list from database
                 arrayList=dbHelper.retrieveListFromDb();
 
                 int n=arrayList.size();
